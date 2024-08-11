@@ -7,7 +7,7 @@
 *  
 *	Name: Nelapatla Lakshmi Apoorva Student ID: 151316239 Date: 10 August 2024
 * 
-*	Published URL: 
+*	Published URL: https://web700-assignment6.vercel.app/courses
 * 
 ********************************************************************************/ 
 const express = require('express');
