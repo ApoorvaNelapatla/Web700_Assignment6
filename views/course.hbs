@@ -1,0 +1,25 @@
+<div class="container">
+        <div class="row">
+            <main class="col-md-12">
+                <h1>Course Details</h1>
+                
+                <form action="/courses/update" method="POST">
+                    <input type="hidden" name="courseId" value="{{course.courseId}}">
+                    
+                    <div class="mb-3">
+                        <label for="courseCode" class="form-label">Course Code</label>
+                        <input type="text" id="courseCode" name="courseCode" class="form-control" value="{{course.courseCode}}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="courseDescription" class="form-label">Course Description</label>
+                        <input type="text" id="courseDescription" name="courseDescription" class="form-control" value="{{course.courseDescription}}" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Update Course</button>
+                </form>
+                
+            </main>
+        </div>
+    </div>
+

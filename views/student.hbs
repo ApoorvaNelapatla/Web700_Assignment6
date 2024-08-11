@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h2>{{viewData.student.firstName}} {{viewData.student.lastName}}</h2>
+        <hr />
+        <form method="POST" action="/students/update">
+            <input type="hidden" name="studentNum" value="{{viewData.student.studentNum}}">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input class="form-control" id="firstName" name="firstName" type="text"
+                            value="{{viewData.student.firstName}}" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input class="form-control" id="lastName" name="lastName" type="text"
+                            value="{{viewData.student.lastName}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" id="email" name="email" type="email"
+                            value="{{viewData.student.email}}" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="addressStreet">Address</label>
+                        <input class="form-control" id="addressStreet" name="addressStreet" type="text"
+                            value="{{viewData.student.addressStreet}}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <input class="form-control" id="status" name="status" type="text"
+                            value="{{viewData.student.status}}" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        {{#if viewData.courses}}
+                        <select class="form-select" name="course" id="course">
+                            <option value="">Select Course</option>
+                            {{#each viewData.courses}}
+                            <option value="{{this.courseId}}" {{#if selected}} selected {{/if}}>
+                                {{this.courseCode}}
+                            </option>
+                            {{/each}}
+                        </select>
+                        {{else}}
+                        <div>No Courses</div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <!-- Add the Update Student button -->
+            <div class="form-group text-end">
+                <button type="submit" class="btn btn-primary">Update Student</button>
+            </div>
+        </form>
+    </div>
+</div>

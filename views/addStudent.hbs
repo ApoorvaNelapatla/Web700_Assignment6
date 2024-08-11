@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Student</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Student</h1>
+        <main class="col-md-12">
+            <form method="POST" action="/students/add">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input class="form-control" name="firstName" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input class="form-control" name="lastName" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" name="email" type="email" required />
+                </div>
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input class="form-control" name="addressStreet" type="text" required />
+                <div class="form-group">
+                    <label>Status:</label>
+                    <input class="form-control" name="status" type="text" required />
+                </div>    
+                </div>
+
+
+                <div class="form-group">
+                    <label>Course:</label>
+                    {{#if courses}}
+                        <select class="form-select" name="course" id="course">
+                            <option value="">Select Course</option>
+                            {{#each courses}}
+                                <option value="{{courseId}}">{{courseCode}}</option>
+                            {{/each}}
+                        </select>
+                    {{else}}
+                        <div>No Courses</div>
+                    {{/if}}
+                </div>
+                <div class="form-group">
+                    <label>Teaching Assistant:</label>
+                    <input type="checkbox" name="TA" />
+                </div>
+                <button type="submit" class="btn btn-primary">Add Student</button>
+            </form>
+        </main>
+    </div>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
